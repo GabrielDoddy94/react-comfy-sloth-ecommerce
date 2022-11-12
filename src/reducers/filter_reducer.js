@@ -80,7 +80,18 @@ const filter_reducer = (state, action) => {
   }
 
   if (action.type === FILTER_PRODUCTS) {
-    return { ...state };
+    const { all_products, filters } = state;
+    const { text, category, company, color, price, shipping } = filters;
+
+    let tempProducts = [...all_products];
+
+    if (text) {
+      tempProducts = tempProducts.filter(product => {
+        return product.name.toLowerCase().startsWith(text);
+      });
+    }
+
+    return { ...state, filtered_products: tempProducts };
   }
 
   if (action.type === CLEAR_FILTERS) {
