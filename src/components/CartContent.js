@@ -12,10 +12,13 @@ const CartContent = () => {
   return (
     <Wrapper className="section section-center">
       <CartColumns />
+
       {cart.map(item => (
         <CartItem key={item.id} {...item} />
       ))}
+
       <hr />
+
       <div className="link-container">
         <Link to="/products" className="link-btn">
           continue shopping
@@ -28,6 +31,7 @@ const CartContent = () => {
           clear shopping cart
         </button>
       </div>
+
       <CartTotals />
     </Wrapper>
   );
