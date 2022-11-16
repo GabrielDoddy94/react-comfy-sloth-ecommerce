@@ -15,5 +15,6 @@ const CheckoutPage = () => {
     </main>
   );
 };
+
 const Wrapper = styled.div``;
 export default CheckoutPage;
